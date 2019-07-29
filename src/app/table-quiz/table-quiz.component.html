@@ -1,0 +1,31 @@
+<table class="question-section" align="center">
+  <tr>
+    <th class="question-number-section">Q:{{questionNumber+1}}</th>
+    <th class="question-text-section">
+      <div [innerHtml]="question.question | safeHtml: 'html'"></div>
+    </th>
+  </tr>
+</table>
+
+
+<mat-grid-list class="multiple-option-section" cols="2" rowHeight="2:1" rowHeight="100px" [gutterSize]="'10px'">
+  <ng-container *ngFor="let option of optionsQuiz">
+    <mat-grid-tile (click)="onOptionClicked(option)" class="grid-tile-section"
+      [ngClass]="{'grid-tile-section': !(option === clickedOption), 'grid-tile-section-selected': (option === clickedOption), 'grid-tile-section-selected-right': submitFormClicked && (ansewerdGood && (option === clickedOption)), 'grid-tile-section-selected-wrong':   submitFormClicked && (!ansewerdGood && (option === clickedOption))}">
+      <div *ngIf="submitFormClicked">
+        <div class="successIcon" *ngIf="(ansewerdGood && (option === clickedOption))">
+          <img src="/assets/Group.png" [ngStyle]="{'max-height':'30px'}" />
+        </div>
+        <div class="successIcon" *ngIf="(!ansewerdGood && (option === clickedOption))">
+          <img src="/assets/Group 3.png" [ngStyle]="{'margin-right':'10%', 'max-height':'30px'}" />
+        </div>
+      </div>
+      <div class="option-quiz-text" [innerHtml]="option | safeHtml: 'html'"></div>
+    </mat-grid-tile>
+  </ng-container>
+</mat-grid-list>
+
+<div (click)="onSubmitClicked(currentQuestionIdx)"
+  [ngClass]="{'button-disabled':!optionClicked,'button': optionClicked}">
+  <div class="btn-text">{{bottomTableButtonText}}</div>
+</div>

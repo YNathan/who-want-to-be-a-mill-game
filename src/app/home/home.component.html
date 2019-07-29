@@ -1,0 +1,12 @@
+<p class="title-header-scetion">
+   choose a category or press <a routerLink="/quiz" [queryParams]="{category: 'all'}">here</a> for all categories combined in a 10 questions quiz
+  
+</p>
+<div class="container-categories-section" text-align="center">
+  <ng-container *ngFor="let item of categories">
+    <mat-card class="category-section" routerLink="/quiz" [queryParams]="{category: item}">{{item}}</mat-card>
+
+
+  </ng-container>
+
+</div>

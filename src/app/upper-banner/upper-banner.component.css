@@ -1,0 +1,33 @@
+.upper-banner {
+    width : 100%;
+    height : 7.22%;
+    z-index: 3;
+  }
+.upper-banner img:nth-child(1){
+    top: 0px;
+	left: 0px;
+    width : 100%;
+    height : 9%;
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    z-index: -1;
+    position:absolute;
+}
+.upper-banner img:nth-child(2){
+    width : 20%;
+    height : calc(7.22%);
+    z-index: 10;
+}
+
+
+.test {
+    position: fixed;
+    align-content: center;
+    padding-left: 10%;
+    padding-right: 0%;
+    width : 100%;
+    height : 30.22%;
+    background: url("/assets/Group 5.png") 100% 100% no-repeat;
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    }

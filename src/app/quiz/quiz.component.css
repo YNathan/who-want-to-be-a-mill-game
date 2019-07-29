@@ -1,0 +1,36 @@
+mat-horizontal-stepper{
+    margin-top: 10px;
+}
+::ng-deep .mat-horizontal-stepper-header-container{
+    /*top: calc(80%) !important;*/
+    left: calc(50% - 400px);
+    width: 63%;
+    position: absolute;
+    visibility: hidden;    
+}
+::ng-deep .mat-stepper-horizontal-line{
+    display: none !important;
+}
+::ng-deep .mat-horizontal-stepper-header{
+    padding: 0 0 !important;
+    display: none;
+}
+
+
+.dot-unselected {
+    height: 15px;
+    width: 15px;
+    background-color: #C9CFD3;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px
+  }
+
+.dot-selected {
+    height: 15px;
+    width: 15px;
+    background-color: #0D7BAB;;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px;
+  }
